@@ -7,7 +7,7 @@
 
 <section class="main-content-w3layouts-agileits">
 	<div class="container">
-		<h3 class="tittle">Blog Posts</h3>
+		<h3 class="tittle">Bloglar</h3>
 		<div class="inner-sec">
 			<!--left-->
 			<div class="left-blog-info-w3layouts-agileits text-left">
@@ -15,7 +15,7 @@
 					@foreach (var item in Model)
 					{
 						<div class="col-lg-4 card">
-							<a href="single.html">
+							<a href="/Blog/BlogReadAll/@item.BlogID/">
 								<img src="@item.BlogImage" class="card-img-top img-fluid" alt="">
 							</a>
 							<div class="card-body">

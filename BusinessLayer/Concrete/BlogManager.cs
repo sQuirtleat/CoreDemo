@@ -43,6 +43,11 @@ namespace BusinessLayer.Concrete
 			return _blogdal.GetListAll();
 		}
 
+		public List<Blog> GetLast3Blog()
+		{
+			return _blogdal.GetListAll().Take(3).ToList();
+		}
+
 		public void RemoveBlog(Blog blog)
 		{
 			throw new NotImplementedException();
@@ -51,6 +56,11 @@ namespace BusinessLayer.Concrete
 		public void UpdateBlog(Blog blog)
 		{
 			throw new NotImplementedException();
+		}
+
+		public List<Blog> GetBlogListByWriter(int id)
+		{
+			return _blogdal.GetListAll(x=>x.WriterID == id);
 		}
 	}
 }
