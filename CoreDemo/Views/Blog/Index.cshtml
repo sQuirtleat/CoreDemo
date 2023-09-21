@@ -40,7 +40,16 @@
 								<h5 class="card-title">
 									<a href="/Blog/BlogReadAll/@item.BlogID/">@item.BlogTitle</a>
 								</h5>
-								<p class="card-text mb-3">@item.BlogContent.Substring(0,item.BlogContent.Substring(0,130).LastIndexOf(" "))...</p>
+								@{
+									string blogContent = item.BlogContent;
+									if (blogContent.Length > 130)
+									{
+										blogContent = blogContent.Substring(0, 130).Substring(0, blogContent.Substring(0, 130).LastIndexOf(" ")) + "...";
+									}
+								}
+
+								<p class="card-text mb-3">@blogContent</p>
+								
 								<a href="/Blog/BlogReadAll/@item.BlogID/" class="btn btn-primary read-m">Devamını Oku</a>
 							</div>
 						</div>
